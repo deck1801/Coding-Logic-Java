@@ -1,34 +1,36 @@
 package Recursion;
 
-
-
 /*
- * Recursion Problem: Shifting of character in the string 
+ * Move all X to the end of the string.
  */
-
 public class rec6 {
+    public static int count=0;
+    public static String result="";
     public static void main(String args[]){
         String str="axbcxxd";
-        ChangeCharInString(str, 0, 0, "");
-
+        System.out.println(MoveToEnd(str, 0));
+        
     }
     
-    public static void ChangeCharInString(String str,int idx,int count,String newString){
+    public static String MoveToEnd(String str, int idx){
         if(idx==str.length()){
             for(int i=0;i<count;i++){
-                newString+='x';
+                result+='x';
             }
-            System.out.println("The Resultant String: "+newString);
-            return;
+            return result;
         }
+        
         char currChar=str.charAt(idx);
-        if(currChar =='x' || currChar=='X'){
+        if(currChar=='x'){
             count++;
-            ChangeCharInString(str, idx+1, count, newString);
+            MoveToEnd(str, idx+1);
         }else{
-           newString+=currChar;
-           ChangeCharInString(str, idx+1, count, newString); 
+            result+=currChar;
+            MoveToEnd(str,idx+1);
         }
+        return result;
+        
+        
 
-    } 
+    }
 }

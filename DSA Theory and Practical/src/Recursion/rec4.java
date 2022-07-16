@@ -1,36 +1,38 @@
 package Recursion;
 
+
+
 /*
- * RECURSION PROBLEM 4: 
- * First and Last Occurence of the element
+ * Recrsion Question-3 
+ * 1st and last occurence of an element.
  */
 
 public class rec4 {
-    public static int First=-1;
-    public static int Last=-1;
+    public static int first=-1;
+    public static int last=-1;
     public static void main(String args[]){
         String str="abaacdaefaah";
-        FirstAndLastAppreance(0, str, 'a');
-
-    }
-
-
-    public static void FirstAndLastAppreance(int idx,String str,char ch){
+        FirstLastOccurence(0, str,'a');
         
+    }
+    
+    public static void FirstLastOccurence(int idx, String str,char ch){
         if(idx==str.length()){
-            System.out.println("First Appreance: "+ First);
-            System.out.println("Second Appreance: "+ Last);
+            System.out.println("First Occurence: "+first);
+            System.out.println("Last Occurence: "+last);
             return;
         }
-        char currentChar=str.charAt(idx);
-        if(currentChar==ch){
-            if(First==-1){
-                First=idx;
+        char current=str.charAt(idx);
+        if(current==ch){
+            if(first==-1){
+                first=idx;
             }else{
-                Last=idx;
+                last=idx;
             }
         }
-            
-        FirstAndLastAppreance(idx+1, str, ch);
+        
+        FirstLastOccurence(idx+1, str, ch);
+
+        
     }
 }

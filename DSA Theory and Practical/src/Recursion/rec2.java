@@ -1,30 +1,26 @@
 package Recursion;
 
-
 /*
- * Problem 1: Tower Of Hanoi
- * Time Complexity: O(2^n)
+ * Tower of Hanoi Classical Recursion Problem
+ * 
  */
 
 public class rec2 {
     public static void main(String args[]){
-     int n=2;
-     TowerOfHanoi(n, "S", "H","D");
+        int n=3;
+        TowerOfHanoi(n,"S","H","D");
+        
         
     }
 
-    public static void TowerOfHanoi(int n,String source,String helper,String destination){
+    public static void TowerOfHanoi(int n, String Source,String Helper,String Destination){
         if(n==1){
-            System.out.println("Transfer Disk: "+n+" from "+source+" to "+destination);
+            System.out.println("Tranfer Disk "+ n +" From: "+Source+" To: "+Destination);
             return;
         }
-        TowerOfHanoi(n-1, source, destination,helper);
-        System.out.println("Transfer Disk: "+n+" from "+source+" to "+destination);
-        TowerOfHanoi(n-1, helper, source, destination);
-
         
+          TowerOfHanoi(n-1, Source, Destination, Helper);
+        System.out.println("Tranfer Disk "+ n +" From: "+Source+" To: "+Destination);
+        TowerOfHanoi(n-1, Helper, Source, Destination);
     }
-
-    
-    
 }
