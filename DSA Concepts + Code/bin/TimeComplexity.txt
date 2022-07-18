@@ -1,0 +1,19 @@
+Time Complexity
+
+The time taken by an algorithm as a function of the length of the input
+
+Sum of n Natural Number: (N(N+1))/2
+
+The check must be happen hardware independent
+
+Big Oh notation is used to measure the upper bound performance of the algorithm
+
+f(n)=3n^2 + 5n --> O(n^2)
+f(n)=n + 100logn --> O(n)
+
+Theta Notation + Omega Notation (exact + lower Bound of the algorithm)
+
+Steps to find the time Complexity of a recursive funtion
+1. convert the function into T(n) equation 
+2. Then use TREE METHOD to find pattern of the outcomes 
+3. Find the length of the tree starting node as non recursive part.
