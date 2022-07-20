@@ -20,6 +20,10 @@ public class BitWiseoperatios {
         SetTheIthBit(12, 2);
         ClearTheIthBit(12, 3);
         findTheNumberReqConv(22, 27);
+        int[] arr=new int[]{5,4,1,4,3,5,1};
+        FindingUniqueElement(arr, 7);
+        int[] arr2=new int[]{5,4,1,4,3,5,1,2};
+        FindingTwoUniqueElements(arr2, 8);
     }
     
     public static void OddEvenCheck(int n){
@@ -72,6 +76,31 @@ public class BitWiseoperatios {
             }
         }
         System.out.println("The number of bits to be converted: "+count);
-
     }
+
+    //Bit Mainpulation Advance Questions
+    public static void FindingUniqueElement(int[] arr, int n){
+        int res=0;
+        for(int i=0;i<n;i++){
+            res=res^arr[i];
+        }
+        System.out.println(res);
+    }
+    //the right most bit tells us the nature of integer 1=ODD & 0==even
+    
+    public static void FindingTwoUniqueElements(int[] arr,int n){
+        int res1=0,res2=0;
+        for(int i=0;i<n;i++)
+        {
+            if((arr[i]&1)!=0){
+                res1=res1^arr[i];
+            }else{
+                res2=res2^arr[i];
+            }
+        }
+        System.out.println(res1+" "+res2);
+    }
+
+
+
 }
